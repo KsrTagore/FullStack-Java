@@ -1,0 +1,58 @@
+<!DOCTYPE html>Add commentMore actions
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLE CAL</title>
+<style>
+    button{
+        border-radius: 20px;
+        border: solid;
+        width: 80px;
+        height: 40px;
+    }
+    input{
+        width: 20%;
+        height: 30px;
+        border: solid rgb(29, 24, 24);
+    }
+    body{
+        background-color: rgba(197, 208, 208, 0.4);
+    }
+</style>
+</head>
+<body>
+    <center>
+    <h1 style="color: rgb(202, 124, 124);">SIMPLE CALCULATOR</h1><br><br>
+    <input type="number" id="r" placeholder="Enter Number">&nbsp;
+    <input type="number" id="f" placeholder="Enter number"><br><br><br>
+    <button onclick="add()" style="background-color: rgb(162, 216, 107);">Add</button>
+    <button onclick="sub()" style="background-color: rgb(92, 114, 203);">Sub</button>
+    <button onclick="mul()" style="background-color: rgb(203, 94, 94);">Mul</button>
+    <button onclick="div()" style="background-color: rgb(232, 232, 102);">Div</button>
+    <h1 id="display"></h1>
+    </center>
+</body>
+<script>
+    function add(){
+            let a=Number(document.getElementById("r").value);
+            let b=Number(document.getElementById("f").value);
+            document.getElementById("display").innerHTML=a+b;
+    }
+        function sub(){
+            let a=Number(document.getElementById("r").value);
+            let b=Number(document.getElementById("f").value);
+            document.getElementById("display").innerHTML=a-b;
+        }
+            function mul(){
+            let a=Number(document.getElementById("r").value);
+            let b=Number(document.getElementById("f").value);
+            document.getElementById("display").innerHTML=a*b;
+            }
+            function div() {
+            let a=Number(document.getElementById("r").value);
+            let b=Number(document.getElementById("f").value);
+            document.getElementById("display").innerHTML=a/b;
+            }
+</script>
+</html>Add comment
