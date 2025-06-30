@@ -1,0 +1,144 @@
+<!DOCTYPE html>Add commentMore actions
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration Form</title>
+  <style>
+    #f {
+      background-image: url("https://imgs.search.brave.com/dJD-nl4dQp2B3wWvqq_qAF7R8wvk9GplQDNTP_vPjNc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMz/ODU3OTkyNS92ZWN0/b3IvZ2VvbWV0cmlj/LWJhY2tncm91bmQt/b2Ytc3F1YXJlcy1h/bmQtZG90cy5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9U1pK/c0xIV29oMnJUSFJK/UDViU3NzM2E3eHVZ/NkdDRTNpRkxVRFcy/dDBRMD0");
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 20px;
+      margin: 5% auto;
+      width: 50%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+    }
+    button {
+      background-color: rgba(133, 207, 236, 0.5);
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input, select, textarea {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div align="center">
+    <form onsubmit="return validateForm()">
+      <fieldset id="f">
+        <h3 align="center">Registration Form</h3>
+        <table>
+          <tr>
+            <td><label>First Name:</label></td>
+            <td><input type="text" id="fname" required></td>
+          </tr>
+          <tr>
+            <td><label>Middle Name:</label></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td><label>Last Name:</label></td>
+            <td><input type="text" id="lname" required></td>
+          </tr>
+          <tr>
+            <td><label>Email:</label></td>
+            <td><input type="email" id="email" required></td>
+          </tr>
+          <tr>
+            <td><label>Phone Number:</label></td>
+            <td><input type="tel" id="phone" pattern="[0-9]{10}" required></td>
+          </tr>
+          <tr>
+            <td><label>Gender:</label></td>
+            <td>
+              <input type="radio" id="male" name="gender">
+              <label for="male">Male</label>
+              <input type="radio" id="female" name="gender">
+              <label for="female">Female</label>
+              <input type="radio" id="other" name="gender">
+              <label for="other">Other</label>
+            </td>
+          </tr>
+          <tr>
+            <td><label>Date Of Birth:</label></td>
+            <td><input type="date" id="dob" required></td>
+          </tr>
+          <tr>
+            <td><label>Set Username:</label></td>
+            <td><input type="text" id="username" required></td>
+          </tr>
+          <tr>
+            <td><label>Set Password:</label></td>
+            <td><input type="password" id="password" required placeholder="Min 6 characters"></td>
+          </tr>
+          <tr>
+            <td><label>Courses:</label></td>
+            <td>
+              <select id="course" required>
+                <option value="">Select</option>
+                <option value="CSE">CSE</option>
+                <option value="AIML">AIML</option>
+                <option value="ECE">ECE</option>
+                <option value="Civil">Civil</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label>Address:</label></td>
+            <td><textarea id="address" required></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="checkbox" id="terms">
+              <label for="terms">Accept Terms and Conditions</label>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <button type="submit">Register</button>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <p>Already have an account? <a href="login form.html">Log In.</a></p>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+  </div>
+  <script>
+    function validateForm() {
+      const fname = document.getElementById("fname").value.trim();
+      const lname = document.getElementById("lname").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const genderSelected = document.querySelector('input[name="gender"]:checked');
+      const dob = document.getElementById("dob").value;
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+      const course = document.getElementById("course").value;
+      const address = document.getElementById("address").value.trim();
+      const terms = document.getElementById("terms").checked;
+      if (!genderSelected) {
+        alert("Please select your gender.");
+        return false;
+      }
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return false;
+      }
+      if (!terms) {
+        alert("You must accept the terms and conditions.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>
